@@ -55,9 +55,58 @@ function firstnameValidation() {
   return true
 }
 }
+
+//Test du champs lastname (nom de famille)
+function lastnameValidation() {
+  let lastName = document.querySelector("#last").value;
+  const lastnameError = document.getElementById("lastNameErrorMsg");
+  if (lastName === "") {
+    lastnameError.innerText = error ("Champs obligatoire ");
+    lastnameError.style.color = "red";
+    //firstnameError.style.paddingTop = "14px";
+    lastnameError.style.fontSize = "25px"
+    return false;
+  } else if (lastName.trim().length < 2) {
+    lastnameError.innerText = error ("Veuillez entrer 2 caractères ou plus");
+    lastnameError.style.color = "red";
+    lastnameError.style.fontSize = "25px"
+
+    return false;
+}else {
+  lastnameError.innerText= error("")
+  return true
+}
+}
+
+function emailValidation() {
+  let email = document.querySelector("#email").value;
+  let regexEmail = /^[0-9]{1,4}\ [a-z\ éôàêèï]+/i; //Doit commencer par un nombre (max4) puis un espace puis une chaine de caractères
+  const emailError= document.getElementById("emailErrorMsg");
+  if (regexEmail.test(email) === true) {
+    emailError.innerText = error ("Merci d'inscrire une adresse mail correcte");
+    emailError.style.color = "red";
+    emailError.style.fontSize = "25px"
+    return false;
+  }else if (email === ""){
+    emailError.innerText = error ("Champs obligatoire ");
+    emailError.style.color = "red";
+    emailError.style.fontSize = "25px"
+    
+    return false;
+}
+else{
+  emailError.innerText = error("")
+  return true
+}
+  }
+  
+
+
 function validate(){
   return(
-    firstnameValidation()
+    firstnameValidation() &&
+    lastnameValidation() &&
+    emailValidation()
   )
 }
 

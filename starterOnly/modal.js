@@ -82,7 +82,7 @@ function emailValidation() {
   let email = document.querySelector("#email").value;
   let regexEmail = /^[0-9]{1,4}\ [a-z\ éôàêèï]+/i; //Doit commencer par un nombre (max4) puis un espace puis une chaine de caractères
   const emailError= document.getElementById("emailErrorMsg");
-  if (regexEmail.test(email) === true) {
+  if (regexEmail.test(email) === false) {
     emailError.innerText = error ("Merci d'inscrire une adresse mail correcte");
     emailError.style.color = "red";
     emailError.style.fontSize = "25px"

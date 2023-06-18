@@ -80,27 +80,26 @@ function lastnameValidation() {
 
 function emailValidation() {
   let email = document.querySelector("#email").value;
-  let regexEmail = /^[0-9]{1,4}\ [a-z\ éôàêèï]+/i; //Doit commencer par un nombre (max4) puis un espace puis une chaine de caractères
+  let regexEmail = /.+\@.+\..+/;
   const emailError= document.getElementById("emailErrorMsg");
-  if (regexEmail.test(email) === false) {
+  if (email === ""){
+  emailError.innerText = error ("Champs obligatoire ");
+  emailError.style.color = "red";
+  emailError.style.fontSize = "25px"
+  
+  return false;
+}
+  else if (regexEmail.test(email) === false) {
     emailError.innerText = error ("Merci d'inscrire une adresse mail correcte");
     emailError.style.color = "red";
     emailError.style.fontSize = "25px"
     return false;
-  }else if (email === ""){
-    emailError.innerText = error ("Champs obligatoire ");
-    emailError.style.color = "red";
-    emailError.style.fontSize = "25px"
-    
-    return false;
-}
+  }
 else{
   emailError.innerText = error("")
-  return true
+  return true;
 }
-  }
-  
-
+}
 
 function validate(){
   return(

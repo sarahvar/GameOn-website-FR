@@ -101,11 +101,48 @@ else{
 }
 }
 
+function birthdateValidation() {
+  let birthCheckValue = document.querySelector('#birthdate').value;
+  const birthdateError = document.getElementById("birthdateErrorMsg");
+  const minimumAge = 12;
+  const today = new Date();
+  const birthDate = new Date(birthCheckValue);
+  let ageInYears = today.getFullYear() - birthDate.getFullYear();
+
+  ageInYears =
+    today.getMonth() < birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() &&
+      today.getDate() < birthDate.getDate())
+      ? ageInYears - 1
+      : ageInYears;
+
+  let errorMessage = '';
+
+  if (birthCheckValue === '') {
+    errorMessage = 'Merci de renseigner une date de naissance';
+    birthdateError.style.color = "red";
+    birthdateError.style.fontSize = "25px"
+  } else if (ageInYears < minimumAge) {
+    errorMessage = "Désolée, l'âge minimum requis est de 12 ans";
+    birthdateError.style.color = "red";
+    birthdateError.style.fontSize = "25px"
+  }
+
+  birthdateError.innerText = errorMessage;
+  birthdateError.innerHTML = errorMessage;
+
+  // Returns true if no error message is defined, or false if there is one
+  return errorMessage === '';
+}
+
+  
+
 function validate(){
   return(
     firstnameValidation() &&
     lastnameValidation() &&
-    emailValidation()
+    emailValidation() &&
+    birthdateValidation()
   )
 }
 

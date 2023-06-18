@@ -77,7 +77,7 @@ function lastnameValidation() {
   return true
 }
 }
-
+//Test du champs email
 function emailValidation() {
   let email = document.querySelector("#email").value;
   let regexEmail = /.+\@.+\..+/;
@@ -101,6 +101,7 @@ else{
 }
 }
 
+//Test du champs birthdate (date de naissance)
 function birthdateValidation() {
   let birthCheckValue = document.querySelector('#birthdate').value;
   const birthdateError = document.getElementById("birthdateErrorMsg");
@@ -131,21 +132,50 @@ function birthdateValidation() {
   birthdateError.innerText = errorMessage;
   birthdateError.innerHTML = errorMessage;
 
-  // Returns true if no error message is defined, or false if there is one
+  
+// Renvoie vrai si aucun message d'erreur n'est défini, ou faux s'il y en a un
   return errorMessage === '';
 }
 
-  
+//Test du champs quantity (quantité de tournois)
+function quantityTournamentsValidation() {
+  let quantity = document.querySelector("#quantity").value;
+  const quantityTournamentsError = document.getElementById("quantityTournamentsErrorMsg");
+  const quantityValid =
+    quantity >= 0 &&
+    quantity <= 99 &&
+    quantity !== "";
 
+  quantityTournamentsError.innerHTML = quantityValid
+    ? ""
+    : "Merci de renseigner un nombre compris entre 0 et 99";
+
+  quantityTournamentsError.style.color = "red";
+  quantityTournamentsError.style.fontSize = "25px";
+
+  if (quantityValid) {
+    //Valider le champs
+    return true;
+  } else {
+    // Empêcher la validation du champs
+    return false;
+  }
+}
+
+  
+//Fonction qui vérifie que tous les champs du formulaire sont true en verifiant la valeur retournée par chaque foncction
 function validate(){
   return(
     firstnameValidation() &&
     lastnameValidation() &&
     emailValidation() &&
-    birthdateValidation()
+    birthdateValidation() &&
+    quantityTournamentsValidation()
   )
 }
 
+
+//Event au click submit pour permettre de valider le formulaire si tout est true
 const form = document.getElementById("form");
 form.addEventListener("submit", (event)=>{
   event.preventDefault()

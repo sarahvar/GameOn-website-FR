@@ -161,8 +161,37 @@ function quantityTournamentsValidation() {
     return false;
   }
 }
-
+//Test si une case du choix d'une ville a bien été cocher 
+function locationsValidation(){
+  let locations = document.querySelector("#locationsErrorMsg");
+  const locationsError = document.getElementById("locationsErrorMsg")
+  const locationsCheck = document.querySelector('input[name="location"]:checked')
+  if (!locationsCheck){
+    locations.innerHTML = "Merci de choisir une ville"
+    locationsError.style.color = "red";
+    locationsError.style.fontSize = "25px"
+    return false
+  } else {
+      location.innerHTML = ""
+      return true
+  }
+}
   
+function acceptedConditionsValidation(){
+  const checkbox1 = document.querySelector("#checkbox1");
+  const acceptedError = document.querySelector("#acceptedErrorMsg");
+  if(checkbox1.checked === false){
+    acceptedError.innerText = error ("Merci de lire et d'accepter les conditions d'utilistaion")
+    acceptedError.style.color = "red";
+    acceptedError.style.fontSize ="25px"
+    return false
+  } else {
+    acceptedError.innerText = error ("")
+    acceptedError.style.color = "red";
+    acceptedError.style.fontSize = "25px"
+    return true;
+  }
+}
 //Fonction qui vérifie que tous les champs du formulaire sont true en verifiant la valeur retournée par chaque foncction
 function validate(){
   return(
@@ -170,7 +199,9 @@ function validate(){
     lastnameValidation() &&
     emailValidation() &&
     birthdateValidation() &&
-    quantityTournamentsValidation()
+    quantityTournamentsValidation() &&
+    locationsValidation() &&
+    acceptedConditionsValidation()
   )
 }
 

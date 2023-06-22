@@ -479,7 +479,6 @@ footer {
 
 @media screen and (max-width: 800px) {
   .topnav {
-    margin: 3.5% -15px 3.5% 0px;
     padding-top: 1rem;
   }
 }
@@ -621,6 +620,7 @@ main {
   .hero-headline {
     font-style: normal;
     font-weight: 500;
+    font-weight: bold;
     font-size: 40px;
     line-height: 52px;
     max-width: 330px;

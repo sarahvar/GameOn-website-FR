@@ -124,7 +124,7 @@ function birthdateValidation() {
     birthdateError.style.color = "red";
     birthdateError.style.fontSize = "25px"
   } else if (ageInYears < minimumAge) {
-    errorMessage = "Désolée, l'âge minimum requis est de 12 ans";
+    errorMessage = "Désolé(e), l'âge minimum requis est de 12 ans";
     birthdateError.style.color = "red";
     birthdateError.style.fontSize = "25px"
   }

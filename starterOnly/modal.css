@@ -105,7 +105,6 @@ img {
   margin: 5% auto;
   width: 100%;
   max-width: 500px;
-  height: 900px;
   animation-name: modalopen;
   animation-duration: var(--modal-duration);
   background: #232323;
@@ -412,20 +411,29 @@ footer {
   margin: 0 20px;
 }
 /* ================================================ Fenêtre de remerciement ==============================================================*/
+
+.contentSuccess {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 700px;
+  max-width: 536px;
+}
 .containerSuccess h1 {
   font-family: 'DM Sans';
+  margin-bottom: 64px;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
-  line-height: 142.6%;
   text-align: center;
   color: #fff;
-  margin-top: 350px;
 }
 .btn-success {
   background: #fe142f;
+  position: absolute;
+  bottom: 17px;
   display: block;
-  margin: 385px auto;
+  margin: 0 auto;
   border-radius: 7px;
   font-size: 1rem;
   padding: 12px 82px;

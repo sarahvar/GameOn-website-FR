@@ -471,7 +471,6 @@ footer {
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
-    top: 0;
   }
 
   .topnav.responsive a {
@@ -553,7 +552,7 @@ img {
   .topnav.responsive .icon {
     position: absolute;
     right: 0;
-    top: 0;
+    top: 16px;
   }
 
   .topnav.responsive a {
@@ -574,7 +573,6 @@ img {
   .topnav a.icon {
     float: right;
     display: block;
-    margin-top: -15px;
   }
 
   .header-logo {

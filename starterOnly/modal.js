@@ -10,30 +10,39 @@ function editNav() {
 // DOM Elements
 const modalbg = document.querySelector(".bground");
 const modalBtn = document.querySelectorAll(".modal-btn");
+const modalCloseBtn = document.querySelector(".close"); // ajout de la gestion du X pour fermer la modale
 const formData = document.querySelectorAll(".formData");
-const close = document.querySelector(".close").addEventListener("click", closeModal)
 
-// launch modal event
+// lance l'événement modale bouton
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
-// launch modal form
+modalCloseBtn.addEventListener("click", closeNav);
+//// lance le formulaire modal
 function launchModal() {
   modalbg.style.display = "block";
 }
-
-//Fermeture de la modale
-function closeModal(){
+// Fermeture de la nav
+function closeNav() {
   modalbg.style.display = "none";
 }
-function modalValidation(){
-  const modalSuccess = document.querySelector("#modalSuccess");
-  modalSuccess.style.display="block";
-  modalbg.style.display="none";
+const close = document.querySelectorAll("#close");
+close.forEach((closed) => closed.addEventListener("click", closeModal));
+
+// Fermeture de la modale
+function closeModal() {
+  modalSuccess.style.display = "none";
+  location.reload();
 }
-function error(message){
+// Modal de succès
+function modalValidation() {
+  const modalSuccess = document.querySelector("#modalSuccess");
+  modalSuccess.style.display = "block";
+  modalbg.style.display = "none";
+}
+// Function générique pour génèrer les erreurs
+function error(message) {
   return message;
 }
-
 //Test du champs firstname (prénoms)
 function firstnameValidation() {
   let firstName = document.querySelector("#first").value;

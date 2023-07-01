@@ -190,7 +190,7 @@ function acceptedConditionsValidation(){
   const checkbox1 = document.querySelector("#checkbox1");
   const acceptedError = document.querySelector("#acceptedErrorMsg");
   if(checkbox1.checked === false){
-    acceptedError.innerText = error ("Merci de lire et d'accepter les conditions d'utilistaion")
+    acceptedError.innerText = error ("Merci de lire et d'accepter les conditions d'utilisation")
     acceptedError.style.color = "red";
     acceptedError.style.fontSize ="25px"
     return false

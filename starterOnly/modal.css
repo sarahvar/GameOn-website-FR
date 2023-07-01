@@ -362,7 +362,6 @@ input {
   z-index: 1;
 }
 .hero-headline {
-  font-size: 6rem;
   font-weight: normal;
   white-space: nowrap;
 }
@@ -489,7 +488,7 @@ footer {
 }
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1023px) {
   .topnav {
     padding-top: 1rem;
   }
@@ -536,7 +535,11 @@ img {
 .topnav .icon {
   display: none;
 }
-
+.hero-headline {
+  /* font-size: 6rem; */
+  font-weight: normal;
+  white-space: nowrap;
+}
 @media screen and (max-width: 768px) {
   .topnav a {
     display: none;
@@ -640,7 +643,7 @@ main {
     width: 100%;
     font-style: normal;
     font-weight: 400;
-    font-size: 9px;
+    font-size: 18px;
     line-height: 17px;
     max-width: 330px;
   }

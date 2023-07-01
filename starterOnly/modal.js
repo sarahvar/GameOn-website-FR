@@ -13,7 +13,7 @@ const modalBtn = document.querySelectorAll(".modal-btn");
 const modalCloseBtn = document.querySelector(".close"); // ajout de la gestion du X pour fermer la modale
 const formData = document.querySelectorAll(".formData");
 
-// lance l'événement modale bouton
+// lance l'événement bouton de la modale
 modalBtn.forEach((btn) => btn.addEventListener("click", launchModal));
 
 modalCloseBtn.addEventListener("click", closeNav);

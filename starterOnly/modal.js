@@ -51,13 +51,12 @@ function firstnameValidation() {
   if (firstName === "") {
     firstnameError.innerText = error ("Champs obligatoire ");
     firstnameError.style.color = "red";
-    //firstnameError.style.paddingTop = "14px";
-    firstnameError.style.fontSize = "25px"
+    firstnameError.style.fontSize = "12px"
     return false;
   } else if (firstName.trim().length < 2) {
     firstnameError.innerText = error("Veuillez entrer 2 caractères ou plus");
     firstnameError.style.color = "red";
-    firstnameError.style.fontSize = "25px";
+    firstnameError.style.fontSize = "12px";
 
     return false;
   } else {
@@ -73,13 +72,12 @@ function lastnameValidation() {
   if (lastName === "") {
     lastnameError.innerText = error ("Champs obligatoire ");
     lastnameError.style.color = "red";
-    //firstnameError.style.paddingTop = "14px";
-    lastnameError.style.fontSize = "25px"
+    lastnameError.style.fontSize = "12px"
     return false;
   } else if (lastName.trim().length < 2) {
     lastnameError.innerText = error("Veuillez entrer 2 caractères ou plus");
     lastnameError.style.color = "red";
-    lastnameError.style.fontSize = "25px";
+    lastnameError.style.fontSize = "12px";
 
     return false;
   } else {
@@ -95,13 +93,13 @@ function emailValidation() {
   if (email === "") {
     emailError.innerText = error("Champs obligatoire ");
     emailError.style.color = "red";
-    emailError.style.fontSize = "25px";
+    emailError.style.fontSize = "12px";
 
     return false;
   } else if (regexEmail.test(email) === false) {
     emailError.innerText = error("Merci d'inscrire une adresse mail correcte");
     emailError.style.color = "red";
-    emailError.style.fontSize = "25px";
+    emailError.style.fontSize = "12px";
     return false;
   } else {
     emailError.innerText = error("");
@@ -130,11 +128,11 @@ function birthdateValidation() {
   if (birthCheckValue === "") {
     errorMessage = "Merci de renseigner une date de naissance";
     birthdateError.style.color = "red";
-    birthdateError.style.fontSize = "25px";
+    birthdateError.style.fontSize = "12px";
   } else if (ageInYears < minimumAge) {
     errorMessage = "Désolé(e), l'âge minimum requis est de 12 ans";
     birthdateError.style.color = "red";
-    birthdateError.style.fontSize = "25px";
+    birthdateError.style.fontSize = "12px";
   }
 
   birthdateError.innerText = errorMessage;
@@ -157,7 +155,7 @@ function quantityTournamentsValidation() {
     : "Merci de renseigner un nombre compris entre 0 et 99";
 
   quantityTournamentsError.style.color = "red";
-  quantityTournamentsError.style.fontSize = "25px";
+  quantityTournamentsError.style.fontSize = "12px";
 
   if (quantityValid) {
     //Valider le champs
@@ -177,7 +175,7 @@ function locationsValidation() {
   if (!locationsCheck) {
     locations.innerHTML = "Merci de choisir une ville";
     locationsError.style.color = "red";
-    locationsError.style.fontSize = "25px";
+    locationsError.style.fontSize = "12px";
     return false;
   } else {
     location.innerHTML = "";
@@ -193,12 +191,12 @@ function acceptedConditionsValidation() {
       "Merci de lire et d'accepter les conditions d'utilisation"
     );
     acceptedError.style.color = "red";
-    acceptedError.style.fontSize = "25px";
+    acceptedError.style.fontSize = "12px";
     return false;
   } else {
     acceptedError.innerText = error("");
     acceptedError.style.color = "red";
-    acceptedError.style.fontSize = "25px";
+    acceptedError.style.fontSize = "12px";
     return true;
   }
 }
